@@ -21,6 +21,17 @@ app.post('/todos',(req,res)=>{
     })
 });
 
+app.get('/todos',(req,res)=>{
+    Todo.find().then((todos)=>{
+        res.send({
+            todos:todos,
+            status:'got data'
+        });
+    },(err)=>{
+        res.status(400).send(err);
+    });
+})
+
 app.listen(4501,()=>{
     console.log('Server started and listening at 4501');
 })
