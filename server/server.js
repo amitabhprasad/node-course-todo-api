@@ -29,7 +29,7 @@ app.get('/todos',(req,res)=>{
             status:'got data'
         });
     },(err)=>{
-        res.status(400).send(err);
+       // res.status(400).send(err);
     });
 });
 
@@ -42,7 +42,9 @@ app.get('/todos/:id',(req,res)=>{
         if(!todo){
             res.status(404).send(`Requested ID ${id} do not exist`);
         }
-        res.send(todo);
+        res.send({
+            todo:todo
+        });
     }).catch((err)=>{
         res.status(400).send();
     });
