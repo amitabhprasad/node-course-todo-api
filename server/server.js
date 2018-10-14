@@ -25,4 +25,6 @@ app.listen(4501,()=>{
     console.log('Server started and listening at 4501');
 })
 
+module.exports = {app};
+
 
