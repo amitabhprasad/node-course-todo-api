@@ -68,7 +68,6 @@ app.delete('/todos/:id',(req,res)=>{
             result:'deleted'
         });
      }).catch((err)=>{
-        console.log("ERROR ",err);
         return res.status(400).send();
      });
 });
