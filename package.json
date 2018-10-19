@@ -8,14 +8,15 @@
     "test": "nyc --reporter=text mocha server/**/*.test.js",
     "test-watch": "nodemon --exec \"npm test\""
   },
-  "engines":{
-    "node" : "v8.11.3"
+  "engines": {
+    "node": "v8.11.3"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "lodash": "^4.15.0",
     "mongodb": "^2.2.5",
     "mongoose": "^4.5.9"
   },
