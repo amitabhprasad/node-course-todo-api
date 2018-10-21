@@ -1,6 +1,20 @@
 const {SHA256} = require('crypto-js');
 const jwt = require('jsonwebtoken');
+const brypt = require('bcryptjs');
 
+
+var password = '1231bc!';
+brypt.genSalt(10,(err,salt)=>{
+    brypt.hash(password,salt,(err,hash)=>{
+        console.log("HASH ***** ",hash);
+    });
+});
+
+var hashedPassword='$2a$10$s8QOgz2XF.pfAs4yCKTGeurhyaFSpTTXP1Lq3NWoIrMUFeQAwblJ2';
+
+brypt.compare(password,hashedPassword,(err,result)=>{
+    console.log(result);
+});
 var data ={
     id: 10
 }
